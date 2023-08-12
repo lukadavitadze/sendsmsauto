@@ -1,0 +1,33 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+gmail = input("Gmail:")
+passwd = input("Password:")
+whom_send = input("To:")
+sms = input("enter sms: ")
+service_obj = Service("C:\webdrivers\chromedriver.exe")
+driver = webdriver.Chrome(service=service_obj)
+driver.implicitly_wait(5)
+driver.get("https://mail.google.com/mail/u/0/#search/lukinio2222%40gmail.com?compose=new")
+driver.maximize_window()
+name = driver.find_element(by=By.ID, value="identifierId")
+name.send_keys(gmail)#omexaomexa1@gmail.com
+submit_button = driver.find_element(by=By.ID, value="identifierNext")
+submit_button.click()
+pw = driver.find_element(by=By.NAME, value="Passwd")
+pw.send_keys(passwd)#omexa969omexa
+button_two = driver.find_element(by=By.ID, value="passwordNext")
+button_two.click()
+search = driver.find_element(by=By.NAME, value="q")
+search.send_keys(whom_send)
+button_two_l = driver.find_element(by=By.CSS_SELECTOR, value=".gb_Je.gb_Ke.bEP")
+button_two_l.click()
+button_wow = driver.find_element(by=By.CSS_SELECTOR, value=".Cz.J-J5-Ji.e")
+button_wow.click()
+sms_one = driver.find_element(by=By.NAME, value="subjectbox")
+sms_one.send_keys("From machin")
+send_sms = driver.find_element(by=By.CSS_SELECTOR, value=".Am.Al.editable.LW-avf.tS-tW")
+send_sms.send_keys(sms)
+button = driver.find_element(by=By.CSS_SELECTOR, value=".T-I.J-J5-Ji.aoO.v7.T-I-atl.L3")
+button.click()
+buttonlka = driver.find_element(by=By.CSS_SELECTOR, value=".T-I.J-J5-Ji.aoO.v7.")
